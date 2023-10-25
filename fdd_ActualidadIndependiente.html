@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="fdd_estilos/fdd_independiente_estilo.css" />
+    <link rel="stylesheet" href="fdd_estilos/estilos.css" />
+  </head>
+  <body>
+    <nav>
+        <ul class="fdd_nav">
+            <li class="fdd_inicio"><a class="active" href="index.html">Inicio</a></li>
+        </ul>
+    </nav>
+    <header class="fdd_miHeader">
+      <div class="fdd_miHeader h1">
+        <h1>Mi blog</h1>
+      </div>
+    </header>
+    <main>
+      <section>
+        <h1>
+          Independiente rompe el mercado: el plan de Tevez para traer a un
+          campeón de la Copa América
+        </h1>
+        <img src="fdd_imagenes/fdd_tevez_Independiente.webp" alt="Imagen Tevez Independiente" />
+        <h3>
+          Independiente comenzó negociaciones con una figura mundial que estuvo
+          cerca de llegar a Boca. Carlos Tevez sería clave para destrabar su
+          contratación.
+        </h3>
+        <p>
+          Independiente quiere romper el mercado y puso los ojos en jugador que
+          fue figura y campeón de la Copa América. El "Rojo" comenzó
+          negociaciones y podría cerrar su llegada antes que abra el período de
+          transferencias en el fútbol sudamericano. El equipo de Avellaneda vive
+          un presente casi inmejorable. Después de un comienzo de año
+          tormentoso, con graves problemas institucionales, la llegada de Carlos
+          Tevez le dio tranquilidad al equipo que se terminaron plasamando en
+          buenos resultados. Más allá de que aun debe saldar deudas importantes,
+          la dirigencia comienza a delinear el futuro cercano y uno de los
+          objetivos es concretar la llegada de un jugador que brilló en Europa y
+          en su seleccionado.
+        </p>
+      </section>
+      <section>
+        <h1>Comentarios</h1>
+        <form class="fdd_comentarios">
+          <h3>Deja tu opinión</h3>
+          <label for="nombre">Nombre:</label>
+          <input
+            type="text"
+            id="nombre"
+            name="nombre"
+            placeholder="Escribe tu nombre"
+          />
+          <label for="email">Email:</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Escribe tu email"
+          />
+          <label for="opinion">Opinión:</label>
+          <textarea
+            id="opinion"
+            name="opinion"
+            rows="5"
+            cols="40"
+            placeholder="Escribe tu opinión sobre la noticia"
+          ></textarea>
+          <button type="button">Enviar</button>
+        </form>
+      </section>
+      <script>
+        var boton = document.querySelector("button");
+        boton.addEventListener("click", enviarComentario);
+
+        function enviarComentario() {
+          var nombre = document.getElementById("nombre").value;
+          var email = document.getElementById("email").value;
+          var opinion = document.getElementById("opinion").value;
+
+          if (nombre == "" || email == "" || opinion == "") {
+            alert("Debes rellenar todos los campos");
+            return;
+          }
+          var comentario = document.createElement("p");
+          comentario.textContent = nombre + " (" + email + "): " + opinion;
+          var comentarios = document.getElementById("info");
+          comentarios.appendChild(comentario);
+          document.getElementById("nombre").value = "";
+          document.getElementById("email").value = "";
+          document.getElementById("opinion").value = "";
+        }
+      </script>
+    </main>
+    <footer></footer>
+  </body>
+</html>

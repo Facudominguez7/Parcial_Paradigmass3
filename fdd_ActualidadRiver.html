@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="fdd_estilos/fdd_river_estilo.css" />
+    <link rel="stylesheet" href="fdd_estilos/estilos.css" />
+  </head>
+  <body>
+    <nav>
+        <ul class="fdd_nav">
+            <li class="fdd_inicio"><a class="active" href="index.html">Inicio</a></li>
+        </ul>
+    </nav>
+    <header class="fdd_miHeader">
+      <div class="fdd_miHeader h1">
+        <h1>Mi blog</h1>
+      </div>
+    </header>
+    <main>
+      <section>
+        <h1>
+          River hoy: Demichelis duda en los once para enfrentar al Independiente
+          de Tevez
+        </h1>
+        <img src="fdd_imagenes/fdd_Demichelis_river.webp" alt="Imagen de Demichelis tecnico de river" />
+        <h3>
+          River Plate recibe hoy en el Monumental al Independiente de Carlos
+          Tevez, en un partido correspondiente a la fecha 10 de la Copa de la
+          Liga Profesional 2023.
+        </h3>
+        <p>
+          River Plate quiere seguir por la senda del triunfo hoy miércoles
+          cuando reciba a Independiente en el Monumental, en un encuentro
+          correspondiente a la fecha 10 de la Zona A de laCopa de la Liga
+          Profesional 2023. En principio Martín Demichelis quiere poner desde el
+          inicio a varios de los que se perdieron el juego frente a Colón de
+          Santa Fe por participar con sus selecciones de la Fecha FIFA. Una de
+          las grandes incógnitas en River es saber que pasó con Nicolás de la
+          Cruz, quien está con una inflamación en el Tendón de Aquiles y si bien
+          mejoró en las últimas horas, todavía no está confirmado. Lo que se
+          sabe es que volverán Franco Armani y Paulo Díaz, mientras que hay
+          dudas en el lateral con Milton Casco o Enzo Díaz y en el
+          centrodelantero, con Salomón Rondón o Miguel Borja.
+        </p>
+      </section>
+      <section>
+        <h1>Comentarios</h1>
+        <p id="info"></p>
+        <form class="fdd_comentarios">
+          <h3>Deja tu opinión</h3>
+          <label for="nombre">Nombre:</label>
+          <input
+            type="text"
+            id="nombre"
+            name="nombre"
+            placeholder="Escribe tu nombre"
+          />
+          <label for="email">Email:</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Escribe tu email"
+          />
+          <label for="opinion">Opinión:</label>
+          <textarea
+            id="opinion"
+            name="opinion"
+            rows="5"
+            cols="40"
+            placeholder="Escribe tu opinión sobre la noticia"
+          ></textarea>
+          <button type="button">Enviar</button>
+        </form>
+      </section>
+      <script>
+        var boton = document.querySelector("button");
+        boton.addEventListener("click", enviarComentario);
+
+        function enviarComentario() {
+          var nombre = document.getElementById("nombre").value;
+          var email = document.getElementById("email").value;
+          var opinion = document.getElementById("opinion").value;
+
+          if (nombre == "" || email == "" || opinion == "") {
+            alert("Debes rellenar todos los campos");
+            return;
+          }
+          var comentario = document.createElement("p");
+          comentario.textContent = nombre + " (" + email + "): " + opinion;
+          var comentarios = document.getElementById("info");
+          comentarios.appendChild(comentario);
+          //alert("Tu comentario ha sido enviado correctamente");
+          document.getElementById("nombre").value = "";
+          document.getElementById("email").value = "";
+          document.getElementById("opinion").value = "";
+          
+        }
+      </script>
+    </main>
+    <footer></footer>
+  </body>
+</html>

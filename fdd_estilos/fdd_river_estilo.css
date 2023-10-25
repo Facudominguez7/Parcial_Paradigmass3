@@ -1,0 +1,35 @@
+h1 {
+  text-align: center;
+}
+
+.fdd_comentarios {
+  width: 80%;
+  margin: 20px auto;
+  padding: 10px;
+  border: 1px solid #ccc;
+  font-family: Arial, sans-serif;
+}
+.fdd_comentarios h3 {
+  text-align: center;
+  color: #333;
+}
+.fdd_comentarios label {
+  display: block;
+  margin-top: 10px;
+}
+
+.fdd_comentarios input,
+.fdd_comentarios textarea {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 5px;
+}
+
+.fdd_comentarios button {
+  display: block;
+  width: 100px;
+  margin: 10px auto;
+  padding: 10px;
+  background-color: blue;
+  color: white;
+}

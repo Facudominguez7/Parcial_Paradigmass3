@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="fdd_estilos/fdd_boca_estilo.css" />
+    <link rel="stylesheet" href="fdd_estilos/estilos.css" />
+  </head>
+  <body>
+    <nav>
+        <ul class="fdd_nav">
+            <li class="fdd_inicio"><a class="active" href="index.html">Inicio</a></li>
+        </ul>
+    </nav>
+    <header class="fdd_miHeader">
+      <div class="fdd_miHeader h1">
+        <h1>Mi blog</h1>
+      </div>
+    </header>
+    <main>
+      <section>
+        <h1>Boca hoy: qué dice el parte médico sobre Benedetto y Valentini</h1>
+        <img src="fdd_imagenes/fdd_Benedetto_Boca.webp" alt="Imagen de Benedetto" />
+        <h3>
+          Darío Benedetto y Nahuel Valentini salieron lesionados en la derrota
+          ante Racing y en Boca ya tienen el parte médico.
+        </h3>
+        <p>
+          Más allá de la preocupación por la derrota sobre la hora ante Racing,
+          había una cuestión que superaba a esta en importancia e involucraba a
+          Darío Benedetto y a Nahuel Valentini, quienes fueron reemplazados por
+          sendas melestias que encendieron todas las alarmas en Boca pensando en
+          la final de la Copa Libertadores ante Fluminense. Y hoy se conoció el
+          parte médico de ambos. El parte del Departamento Médico del Fútbol
+          Profesional xeneize le dio la razón a Jorge Almirón, ya que indica que
+          Valentini tiene un "traumatismo de pierna izquierda" tras el golpe del
+          delantero Roger Martínez en el primer tiempo, aunque el zaguero
+          boquense siguió jugando hasta promediar el segundo tiempo. En cuanto
+          al "Pipa" Benedetto, el informe del área médica de Boca señala que se
+          trata de una "contractura en el aductor izquierdo". De acuerdo con
+          este informe, quedaría descartada la posibilidad de lesiones
+          musculares preocupantes en los dos casos, a 10 días de la final por la
+          Copa Libertadores ante Fluminense en el estadio Maracaná de Río de
+          Janeiro. Benedetto salió a los 7 minutos del primer tiempo, cuando
+          tras un ataque del equipo que dirige Almirón sintió una molestia en el
+          aductor de su pierna izquierda, y fue reemplazado por Miguel
+          Merentiel, autor del gol boquense en el empate transitorio, aunque
+          enseguida Racing logró el gol de la victoria (2-1).
+        </p>
+      </section>
+      <section>
+        <h1>Comentarios</h1>
+        <form class="fdd_comentarios">
+          <h3>Deja tu opinión</h3>
+          <label for="nombre">Nombre:</label>
+          <input
+            type="text"
+            id="nombre"
+            name="nombre"
+            placeholder="Escribe tu nombre"
+          />
+          <label for="email">Email:</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Escribe tu email"
+          />
+          <label for="opinion">Opinión:</label>
+          <textarea
+            id="opinion"
+            name="opinion"
+            rows="5"
+            cols="40"
+            placeholder="Escribe tu opinión sobre la noticia"
+          ></textarea>
+          <button type="button">Enviar</button>
+        </form>
+      </section>
+      <script>
+        var boton = document.querySelector("button");
+        boton.addEventListener("click", enviarComentario);
+
+        function enviarComentario() {
+          var nombre = document.getElementById("nombre").value;
+          var email = document.getElementById("email").value;
+          var opinion = document.getElementById("opinion").value;
+
+          if (nombre == "" || email == "" || opinion == "") {
+            alert("Debes rellenar todos los campos");
+            return;
+          }
+          var comentario = document.createElement("p");
+          comentario.textContent = nombre + " (" + email + "): " + opinion;
+          var comentarios = document.getElementById("info");
+          comentarios.appendChild(comentario);
+          //alert("Tu comentario ha sido enviado correctamente");
+          document.getElementById("nombre").value = "";
+          document.getElementById("email").value = "";
+          document.getElementById("opinion").value = "";
+          
+        }
+      </script>
+    </main>
+    <footer></footer>
+  </body>
+</html>
